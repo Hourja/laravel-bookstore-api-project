@@ -9,26 +9,21 @@
 
 <body>
     <h1>Create a new bookshop</h1>
-
-    <form action="/bookshops" method="POST">
-
-        @csrf
-
+     <form action="{{ action('BookshopController@store') }}" method="POST">
+@csrf
         <label>
-            Name:<br>
-            <input type="text" name="name">
+            City
+            <input type="text" name='city'>
         </label>
-<br>
-        <label>
-            City:<br>
-            <input type="text" name="city">
+         <label>
+            Name
+            <input type="text" name='name'>
         </label>
-<br>
-<br>
-        <input type="submit" value="Save new bookshop">
-
-
-
+        <input type="submit" value="submit">
     </form>
+
+
+
+
 </body>
 </html>

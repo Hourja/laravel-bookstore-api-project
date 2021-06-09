@@ -17,30 +17,30 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//API ROUTES
-Route::get('/api/books', 'APIBookController@index');
+// //API ROUTES
+// Route::get('/api/books', 'APIBookController@index');
 
-Route::get(
-    'api/books/show/{id?}',
-    'APIBookController@show'
-)->where(['id' => '\d+']);
+// Route::get(
+//     'api/books/show/{id?}',
+//     'APIBookController@show'
+// )->where(['id' => '\d+']);
 
 
 
 //ESHOP ROUTES
 
-Route::get('/eshop', 'EshopController@index');  // DEFAULT HOME INDEX
+// Route::get('/eshop', 'EshopController@index');  // DEFAULT HOME INDEX
 
-Route::get('/eshop/item/{id?}', 'EshopController@show'); // SINGLE ITEM PAGE
+// Route::get('/eshop/item/{id?}', 'EshopController@show'); // SINGLE ITEM PAGE
 
-Route::get(
-    'eshop/categories/{id?}',
-    'EshopController@category'     // CATEGORY PAGE
-);
-Route::get(
-    'eshop/subcategories/{id?}',  // SUBCATEGORY PAGE
-    'EshopController@subcategory'
-);
+// Route::get(
+//     'eshop/categories/{id?}',
+//     'EshopController@category'     // CATEGORY PAGE
+// );
+// Route::get(
+//     'eshop/subcategories/{id?}',  // SUBCATEGORY PAGE
+//     'EshopController@subcategory'
+// );
 
 
 Route::get(
@@ -50,6 +50,8 @@ Route::get(
 
 
 Route::post(
-    '/bookshops',
+    '/bookshops/create',
     'BookshopController@store'
 );
+
+Route::get('/bookshops', 'BookshopController@index');
