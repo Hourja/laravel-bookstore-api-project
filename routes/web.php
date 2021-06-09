@@ -41,3 +41,15 @@ Route::get(
     'eshop/subcategories/{id?}',  // SUBCATEGORY PAGE
     'EshopController@subcategory'
 );
+
+
+Route::get(
+    '/bookshops/create',
+    'BookshopController@create'
+);
+
+
+Route::post(
+    '/bookshops',
+    'BookshopController@store'
+);

@@ -58,12 +58,12 @@ class EshopController extends Controller
     public function category($category_name_from_index)
     {
 
-        $all_the_subcat = Subcategory::get();
-        $category = Category::where('name', '=', "$category_name_from_index")->first();
 
+        $category = Category::where('name', '=', "$category_name_from_index")->first();
+        $all_the_subcat = Subcategory::where('category_id', '=', $category->id)->get();
         $matching_category_id_books = Book::where('category_id', '=', $category->id)->get();  // Index page provided us with the name of category and here we are searching DB to match all the books with this type of category
 
-        
+
         return view('category')
             ->with([
                 'subcategories' => $all_the_subcat,
@@ -82,7 +82,7 @@ class EshopController extends Controller
         $all_the_subcat = Subcategory::get();
 
         $subcategory = Subcategory::where('name', '=', "$subcategory_name_from_category")->first();
-
+      
         $matching_subcategory_id_books = Book::where('subcategory_id', '=', $subcategory->id)->get(); // Category page provided us with the name of subcategory and here we are searching DB to match all the books with this type of subcategory
 
 
