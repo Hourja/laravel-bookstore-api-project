@@ -55,3 +55,6 @@ Route::post(
 );
 
 Route::get('/bookshops', 'BookshopController@index');
+
+
+Route::get('/authors', 'AuthorController@index');
