@@ -1,0 +1,41 @@
+* {
+  background-color: salmon;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 100vh;
+}
+
+.book-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  min-width: 500px;
+  min-height: 50vh;
+  padding: 10px;
+  margin: 10px;
+  border: 3px black solid;
+}
+
+img {
+  width: 200px;
+  height: auto;
+  margin: 20px;
+}
+
+nav a {
+  background-color: grey;
+}
+
+nav {
+  background-color: grey;
+}
+
+/*# sourceMappingURL=style.css.map*/

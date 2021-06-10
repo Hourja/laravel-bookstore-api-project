@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <title>{{ $category_name }}</title>
-    </head>
+@extends ('layouts.main',[
+    'title' =>$category_name])
+
+@section('content')
     <body>
         <div class="container">
             <h1>Category: {{ $category_name }}</h1>
@@ -19,7 +15,9 @@
                 >
             </li>
 
-            @endforeach @foreach($matching_books as $books => $book)
+            @endforeach
+
+            @foreach($matching_books as $books => $book)
 
             <div class="book-item">
                 <hr />
@@ -33,5 +31,4 @@
 
             @endforeach
         </div>
-    </body>
-</html>
+@endsection

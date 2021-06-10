@@ -1,12 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width={device-width}, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{$selected_book->title}}</title>
-</head>
-<body>
+@extends('layouts.main',[
+    'title'=>$selected_book->title
+])
+
+@section('content')
 
 <h1>{{$selected_book->title}}</h1>
 <h2>{{$selected_book->authors}}</h2>
@@ -20,6 +16,4 @@
 <img src="{{$selected_book->image}}" alt="">
 <br>
 <a href="{{action('EshopController@index')}}">Back to home </a>
-
-</body>
-</html>
+@endsection
