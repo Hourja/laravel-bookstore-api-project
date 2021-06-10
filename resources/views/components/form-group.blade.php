@@ -8,10 +8,11 @@
     </div>
 
 
-   @if ($errors->has('{{$namess}}'))
+   @if ($errors->has($name))
+
         <div class="form-group__errors">
 
-            @foreach ($errors->get('{{$namess}}') as $error)
+            @foreach ($errors->get($name) as $error)
 
                 <div class="form-group__error">{{ $error }}</div>
 

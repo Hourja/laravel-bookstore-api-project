@@ -5,9 +5,7 @@
 
 
 @section('content')
-    <h1>List of bookshops</h1>
-
-    <a class="create-button" href="{{ action('BookshopController@create') }}">Create a new bookshop</a>
+    
 
     <div class="bookshops">
 

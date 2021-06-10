@@ -18,11 +18,11 @@ class AuthorController extends Controller
         return view('authors.index')->with('authors', $authors);
     }
 
-
+    //CREATE A NEW OBJECT/DATA IN OUR DATABASE
     public function create()
     {
-
-        return view('authors.create');
+        $author = new Author;
+        return view('authors.create')->with('author', $author);
     }
 
 
@@ -30,6 +30,21 @@ class AuthorController extends Controller
 
     public function store(Request $request)
     {
+        $this->validate(
+            $request,
+            [
+                'name' => 'required|min:8',
+                'bio' => 'required|min:20'
+            ],
+            [
+
+                'name.required' => 'Just give us the name, man!',
+                'name.min' => 'Dont be silly it\'s longer!'
+            ]
+
+        );
+
+
         //Prepare empty object
         $author = new Author;
 
@@ -68,6 +83,21 @@ class AuthorController extends Controller
     // handles the submission of the EDIT form
     public function update(Request $request, $id)
     {
+        $this->validate(
+            $request,
+            [
+                'name' => 'required|min:8',
+                'bio' => 'required|min:20'
+            ],
+            [
+
+                'name.required' => 'Just give us the name, man!',
+                'name.min' => 'Dont be silly it\'s longer!'
+            ]
+
+        );
+
+
 
         //find the existing object
         $author = Author::findOrFail($id);

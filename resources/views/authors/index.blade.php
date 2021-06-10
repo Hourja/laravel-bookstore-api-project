@@ -7,6 +7,7 @@
 
 
 @section('content')
+<h2> <a href="{{action('AuthorController@create')}}">Add a new author</a></h2>
 
     @foreach ($authors as $author)
         <h1>{{$author->name}}</h1>

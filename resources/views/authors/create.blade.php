@@ -14,7 +14,7 @@
         'label' => 'Name',
         'name' => 'name'
     ])
-        <input type="text" name="name" value="">
+        <input type="text" name="name" value="{{old('name',$author->name)}}">
     @endcomponent
 
 
@@ -25,7 +25,7 @@
 
     ])
 
-    <textarea name="bio" cols="30" rows="10"></textarea>
+    <textarea name="bio" cols="30" rows="10">{{old('bio',$author->bio)}}</textarea>
 
 @endcomponent
 
